@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>London Home Renovation & Repairs | Abdullah Çimen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Handyman in London for home renovation, repairs, painting, tiling, small plumbing and more.">
+
+  <style>
+    /* GENEL AYARLAR */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #ddd;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover {
+      border-color: #0077b6;
+    }
+    .nav-cta {
+      font-size: 0.9rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #0077b6;
+      color: #0077b6;
+      font-weight: 600;
+    }
+    .nav-cta:hover {
+      background: #0077b6;
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: #e0f4ff;
+      color: #005b8f;
+      margin-bottom: 0.9rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      margin-bottom: 0.75rem;
+    }
+    .hero p.lead {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      max-width: 32rem;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .btn-primary {
+      background: #0077b6;
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-primary:hover {
+      background: #005b8f;
+    }
+    .btn-outline {
+      border-radius: 999px;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1px solid #aaa;
+      background: #fff;
+      cursor: pointer;
+    }
+    .hero-small-text {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .hero-right {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    }
+    .hero-right h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .info-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+    .info-list li {
+      margin-bottom: 0.45rem;
+    }
+    .info-list span.label {
+      display: inline-block;
+      width: 90px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 2.5rem 0;
+    }
+    .section-header {
+      margin-bottom: 1.75rem;
+    }
+    .section-header h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+    .section-header p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* ABOUT */
+    .about-text {
+      font-size: 0.95rem;
+      color: #444;
+      max-width: 60rem;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.25rem;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.1rem 1.1rem 1rem;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      font-size: 0.9rem;
+    }
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .service-card ul {
+      list-style: disc;
+      padding-left: 1.1rem;
+      color: #555;
+    }
+    .service-card ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* WHY */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+    .why-item {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1rem 1.1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+    }
+    .why-item strong {
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    /* CONTACT */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
+      gap: 2rem;
+    }
+    .contact-box, .contact-form {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.25rem 1.4rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      font-size: 0.9rem;
+    }
+    .contact-box h3, .contact-form h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .contact-item {
+      margin-bottom: 0.6rem;
+    }
+    .contact-item span {
+      font-weight: 600;
+      color: #444;
+    }
+    .contact-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.75rem;
+    }
+    form {
+      display: grid;
+      gap: 0.7rem;
+    }
+    label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #444;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.55rem;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #0077b6;
+      border-color: transparent;
+    }
+    .contact-form button {
+      margin-top: 0.4rem;
+      justify-content: center;
+      width: fit-content;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 2rem;
+      padding: 1rem 0 1.5rem;
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+    }
+
+    /* RESPONSIVE - MOBİL İÇİN */
+    @media (max-width: 800px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 2.5rem;
+      }
+      .nav-links {
+        display: none; /* İstersen buraya mobil menü ekleriz */
+      }
+      .hero-right {
+        order: -1; /* Mobilde iletişim kutusu üste gelir */
+      }
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">Abdullah Çimen</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a href="tel:+447907660210" class="nav-cta">Call Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">
+          London • Home Renovation & Repairs
+        </div>
+        <h1>Reliable handyman for your home in London.</h1>
+        <p class="lead">
+          I help you with renovation, repair and maintenance jobs so you don’t have to worry about them. From small fixes to refreshing a whole room, I offer clean and honest work at fair prices.
+        </p>
+        <div class="hero-cta-group">
+          <a href="https://wa.me/447907660210" class="btn-primary">
+            WhatsApp Me
+          </a>
+          <a href="#services" class="btn-outline">
+            View Services
+          </a>
+        </div>
+        <p class="hero-small-text">
+          Available Monday – Saturday • Free estimate in most London areas.
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <h2>Contact details</h2>
+        <ul class="info-list">
+          <li><span class="label">Name</span> Abdullah Çimen</li>
+          <li><span class="label">Phone</span> <a href="tel:+447907660210">+44 7907 660210</a></li>
+          <li><span class="label">WhatsApp</span> <a href="https://wa.me/447907660210">Chat on WhatsApp</a></li>
+          <li><span class="label">Email</span> <a href="mailto:info@example.com">info@example.com</a></li>
+          <li><span class="label">Based in</span> London, UK</li>
+          <li><span class="label">Focus</span> Building my client base in London</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About me</h2>
+        <p>Starting small, focused on quality work and happy customers in London.</p>
+      </div>
+      <p class="about-text">
+        I have recently started offering my handyman and renovation services in London. 
+        For the last years I have been helping friends, family and local customers with repairs, painting, tiling and small renovation jobs. 
+        My goal now is to build long-term clients in London by offering clear communication, honest pricing and tidy workmanship on every project – no matter how small.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Services</h2>
+        <p>Common jobs I can help you with in your home or workplace.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Renovation & small refurbishment</h3>
+          <ul>
+            <li>Room refresh (walls, doors, details)</li>
+            <li>Wall repairs & filling</li>
+            <li>Plaster touch-ups</li>
+            <li>Small interior changes</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3>Painting & decorating</h3>
+          <ul>
+            <li>Interior wall & ceiling painting</li>
+            <li>Prepping, sanding and filling</li>
+            <li>Feature walls</li>
+            <li>Wallpaper removal</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3>Bathroom & kitchen works</h3>
+          <ul>
+            <li>Tile installation & replacement</li>
+            <li>Re-silicone and sealing</li>
+            <li>Small plumbing fixes (taps, leaks)</li>
+            <li>Cabinet fitting & adjustments</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3>General repairs & handyman</h3>
+          <ul>
+            <li>Furniture assembly</li>
+            <li>Door & lock adjustment</li>
+            <li>Shelves & TV wall mounting</li>
+            <li>Minor electrical (sockets, lights)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE ME -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Why work with me?</h2>
+        <p>I am building my business in London, so every job matters to me.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <strong>Honest and clear pricing</strong>
+          You know the price before I start. I explain what needs to be done and suggest simple, cost-effective solutions.
+        </div>
+        <div class="why-item">
+          <strong>Reliable & responsive</strong>
+          I understand that tradespeople not showing up is a big problem. I answer messages, confirm appointments and keep you updated.
+        </div>
+        <div class="why-item">
+          <strong>Respect for your home</strong>
+          I protect floors and furniture, work carefully and leave the working area tidy at the end of the day.
+        </div>
+        <div class="why-item">
+          <strong>Growing with recommendations</strong>
+          I am building my client base in London and want every job to lead to the next recommendation.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>Send me a message or call me directly to get a free quote.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-box">
+          <h3>Direct contact</h3>
+
+          <div class="contact-item">
+            <span>Phone:</span>
+            <br />
+            <a href="tel:+447907660210">+44 7907 660210</a>
+          </div>
+
+          <div class="contact-item">
+            <span>WhatsApp:</span>
+            <br />
+            <a href="https://wa.me/447907660210">Message on WhatsApp</a>
+          </div>
+
+          <div class="contact-item">
+            <span>Email:</span>
+            <br />
+            <a href="mailto:info@example.com">info@example.com</a>
+          </div>
+
+          <div class="contact-item">
+            <span>Based in:</span>
+            <br />
+            London, UK (North & Central)
+          </div>
+
+          <p class="contact-note">
+            Please include your postcode, a short description of the job and a few photos if possible. 
+            I usually reply the same day or the next working day.
+          </p>
+        </div>
+
+        <div class="contact-form">
+          <h3>Request a quote</h3>
+          <!-- Form gerçek sunucuya bağlı değil, WhatsApp üzerinden gönderiyoruz -->
+          <form>
+            <div>
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your full name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label for="phone">Phone / WhatsApp</label>
+              <input id="phone" type="tel" placeholder="+44 ..." />
+            </div>
+            <div>
+              <label for="message">Job details</label>
+              <textarea id="message" placeholder="Briefly describe the job, location (postcode) and ideal dates." required></textarea>
+            </div>
+            <button type="button" class="btn-primary" onclick="sendWhatsApp()">
+              Send via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> Abdullah Çimen • London Home Renovation & Repairs
+  </footer>
+
+  <script>
+    // Otomatik yıl
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Formdaki bilgileri WhatsApp mesajına çevir
+    function sendWhatsApp() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in your name, email and job details.");
+        return;
+      }
+
+      const text =
+        "Hello Abdullah,%0A%0A" +
+        "My name is " + encodeURIComponent(name) + ".%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Phone/WhatsApp: " + encodeURIComponent(phone) + "%0A%0A" +
+        "Job details:%0A" + encodeURIComponent(message);
+
+      // Abdullah'ın numarası (WhatsApp formatı: ülke kodu + numara, boşluk ve + yok)
+      const whatsappNumber = "447907660210";
+
+      const url = "https://wa.me/" + whatsappNumber + "?text=" + text;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
